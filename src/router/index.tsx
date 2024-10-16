@@ -10,7 +10,7 @@ import {
   import { SignIn, SignUp, LayoutPage, Category, Product } from "@modules";
 
 const Index = () => {
-
+ 
     const router = createBrowserRouter(
         createRoutesFromElements(
           <Route path="/" element={<App />}>
