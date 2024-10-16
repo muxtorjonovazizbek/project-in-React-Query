@@ -3,7 +3,7 @@
 const Index = () => {
   return (
     <div>
-        <h3>Category</h3>
+        <h3>Categories</h3>
     </div>
   )
 }
