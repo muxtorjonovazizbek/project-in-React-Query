@@ -15,22 +15,22 @@ const admin = [
     },
     {
         content: "Category",
-        path: 'layout/category',
+        path: '/layout/category',
         icon: <SolutionOutlined/>
     },
     {
         content: "Brands",
-        path: 'layout/brands',
+        path: '/layout/brands',
         icon: <AppstoreAddOutlined/>
     },
     {
         content: "BrandCategory",
-        path: 'layout/brand-category',
+        path: '/layout/brand-category',
         icon: <AppstoreOutlined/>
     },
     {
         content: "Adds",
-        path: 'layout/adds',
+        path: '/layout/adds',
         icon: <TagOutlined/>
     },
     

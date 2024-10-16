@@ -7,7 +7,8 @@ import {
 
   import App from "../App";
 
-  import { SignIn, SignUp, LayoutPage } from "@modules";
+  import { SignIn, SignUp, LayoutPage, Category, Product } from "@modules";
+
 const Index = () => {
 
     const router = createBrowserRouter(
@@ -17,7 +18,8 @@ const Index = () => {
             <Route path="sign-up" element={<SignUp />} />
 
             <Route path="layout" element={<LayoutPage/>}>
-          
+              <Route index element={<Product/>}/>
+              <Route path="category" element={<Category/>}/>
             </Route>
 
           </Route>
