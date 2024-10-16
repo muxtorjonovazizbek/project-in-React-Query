@@ -24,42 +24,25 @@
 
 import React from 'react';
 import type { FormProps } from 'antd';
-import { Button, Typography, Form, Input, message } from 'antd';
+import { Button, Typography, Form, Input } from 'antd';
 import { useSignInMutation } from '../hooks/mutation'; 
 import { SignIn } from '../types';
 import bgImg from "../../../assets/bg.jpg";
-import { NavLink, useNavigate } from 'react-router-dom';
-import { signIn } from '../service';
+import { NavLink } from 'react-router-dom';
+
 const { Title, Text } = Typography;
 
 const Index: React.FC = () => {
   const {mutate} = useSignInMutation()
-  const navigate = useNavigate()
+
 
   const onFinish: FormProps<SignIn>['onFinish'] = async (values) => {
     const payload: SignIn = {
       phone_number: values.phone_number,
-      password: values.password,
-      
-      
+      password: values.password, 
     }
     console.log('Success:', values);
     mutate(payload)
-
-    try {
-      const res = await signIn(values)
-     
-      if (res.status === 201) {
-        let access_token = res?.data?.data?.tokens?.access_token
-        localStorage.setItem("access_token", access_token)  
-        message.success("Muvaffaqiyatli kirdingiz!");
-        navigate("/layout");
-      }
-    } catch (error) {
-        
-      console.error("Login xatolik:", error);
-    }   
-    
     
   };
   
